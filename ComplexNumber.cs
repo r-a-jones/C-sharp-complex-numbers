@@ -28,12 +28,32 @@
 			}
 			else
 			{
-				z.data = (modulus, argument % (2 * Math.PI), ComplexNumberStoreMode.polar);
+				z.data = (modulus, argument % (2 * System.Math.PI), ComplexNumberStoreMode.polar);
 			}
 
 
 			return z;
 		}
+
+		public ComplexNumber()
+		{
+		}
+
+
+		public ComplexNumber(double d)
+		{
+			data = (d, 0, ComplexNumberStoreMode.cartesian);
+		}
+
+		public ComplexNumber(int i)
+		{
+			data = (i, 0, ComplexNumberStoreMode.cartesian);
+		}
+
+		//public static implicit operator int(ComplexNumber d) => d.digit;
+		public static implicit operator ComplexNumber(int i) => new ComplexNumber(i);
+		public static implicit operator ComplexNumber(double d) => new ComplexNumber(d);
+
 		#endregion
 
 		#region Real and imaginary parts
