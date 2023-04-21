@@ -39,11 +39,6 @@ namespace ComplexNumbers.Math
 			throw new NotImplementedException();
 		}
 
-		public static ComplexNumber Atan2(ComplexNumber z)
-		{
-			throw new NotImplementedException();
-		}
-
 		public static ComplexNumber Atanh(ComplexNumber z)
 		{
 			throw new NotImplementedException();
@@ -51,7 +46,7 @@ namespace ComplexNumbers.Math
 
 		public static ComplexNumber Cbrt(ComplexNumber z)
 		{
-			throw new NotImplementedException();
+			return Pow(z, 1 / 3);
 		}
 
 		public static ComplexNumber Cos(ComplexNumber z)
@@ -97,6 +92,11 @@ namespace ComplexNumbers.Math
 		public static ComplexNumber Sinh(ComplexNumber z)
 		{
 			return (Exp(z) - Exp(-1 * z)) / (2);
+		}
+
+		public static ComplexNumber Sqrt(ComplexNumber z)
+		{
+			return Pow(z, 1 / 2);
 		}
 
 		public static ComplexNumber Tan(ComplexNumber z)
