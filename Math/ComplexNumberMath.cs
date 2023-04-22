@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ComplexNumbers.Math
+namespace ComplexNumbers.Mathematics
 {
-	public static class ComplexNumberMath
+	public static class Math
 	{
 		private static ComplexNumber i = ComplexNumber.i;
 		public static double Abs(ComplexNumber z)
@@ -142,5 +142,20 @@ namespace ComplexNumbers.Math
 				return x * Factorial(x - 1);
 			}
 		}
+
+		/// <summary>
+		/// Represents the natural logarithmic base, specified by the constant, e.
+		/// </summary>
+		public static readonly ComplexNumber E = ComplexNumber.FromCartesian(System.Math.E, 0);
+		/// <summary>
+		/// Represents the ratio of the circumference of a circle to its diameter, specified by the constant, π.
+		/// </summary>
+		public static readonly ComplexNumber PI = ComplexNumber.FromCartesian(System.Math.PI, 0);
+		/// <summary>
+		/// Represents the number of radians in one turn, specified by the constant, τ.
+		/// </summary>
+		public static readonly ComplexNumber Tau = ComplexNumber.FromCartesian(System.Math.Tau, 0);
 	}
+
+
 }
