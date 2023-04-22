@@ -16,32 +16,32 @@ namespace ComplexNumbers.Math
 
 		public static ComplexNumber Acos(ComplexNumber z)
 		{
-			throw new NotImplementedException();
+			return System.Math.PI / 2 + i * Log(Sqrt(1-z*z) + i * z);
 		}
 
 		public static ComplexNumber Acosh(ComplexNumber z)
 		{
-			throw new NotImplementedException();
+			return Log(Sqrt(-1 + z * z) + z);
 		}
 
 		public static ComplexNumber Asin(ComplexNumber z)
 		{
-			throw new NotImplementedException();
+			return -1 * i * Log(Sqrt(1 - z * z) + i * z);
 		}
 
 		public static ComplexNumber Asinh(ComplexNumber z)
 		{
-			throw new NotImplementedException();
+			return Log(Sqrt(1 + z * z) + z);
 		}
 
 		public static ComplexNumber Atan(ComplexNumber z)
 		{
-			throw new NotImplementedException();
+			return 0.5 * i * Log(1 - i * z) - 0.5 * i * Log(1 + i * z);
 		}
 
 		public static ComplexNumber Atanh(ComplexNumber z)
 		{
-			throw new NotImplementedException();
+			return 0.5 * Log(1 + z) - 0.5 * Log(1 - z);
 		}
 
 		public static ComplexNumber Cbrt(ComplexNumber z)
@@ -77,6 +77,11 @@ namespace ComplexNumbers.Math
 		public static ComplexNumber Log2(ComplexNumber z)
 		{
 			return Log(z) / Log(2);
+		}
+
+		public static ComplexNumber Ln(ComplexNumber z)
+		{
+			return Log(z);
 		}
 
 		public static ComplexNumber Pow(ComplexNumber z, ComplexNumber w)
