@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ComplexNumbers.Algebra;
 
 namespace ComplexNumbers.Geometry.Mobius_Transformations
 {
@@ -24,6 +25,10 @@ namespace ComplexNumbers.Geometry.Mobius_Transformations
 		/// <param name="d"></param>
 		public MobiusTransformation(ComplexNumber a, ComplexNumber b, ComplexNumber c, ComplexNumber d)
 		{
+			if (a == ComplexNumber.Infinity || b == ComplexNumber.Infinity || c == ComplexNumber.Infinity || d == ComplexNumber.Infinity)
+			{
+				throw new Exception("Cannot create a Möbius transformation with an infinite coefficient.");
+			}
 			ComplexNumber determinant = a * d - b * c;
 
 			if (determinant == 0)
@@ -56,6 +61,40 @@ namespace ComplexNumbers.Geometry.Mobius_Transformations
 				return a / c;
 			}
 			return (a * z + b) / (c * z + d);
+		}
+
+		/// <summary>
+		/// Returns the fixed points of the Möbius transformation (with multiplicity)
+		/// </summary>
+		/// <returns>A list of 2 (potentially non-unique) complex numbers fixed by the Möbius transformation.</returns>
+		public ComplexNumber[] FixedPoints()
+		{
+			if (c != 0)
+			{
+				return ComplexNumberAlgebra.RootsOfQuadraticEquation(c, d - a, -1*b);
+			}
+			else
+			{
+				if (a == d)
+				{
+					return new ComplexNumber[] { ComplexNumber.Infinity, ComplexNumber.Infinity };
+				}
+				else
+				{
+					return new ComplexNumber[] { b/(d-a), ComplexNumber.Infinity };
+				}
+			}
+		}
+
+		/// <summary>
+		/// The inverse of the Möbius transformation (which is itself a Möbius transformation.)
+		/// </summary>
+		public MobiusTransformation inverse
+		{
+			get
+			{
+				return new MobiusTransformation(d, -1 * b, -1 * c, a);
+			}
 		}
 
 
