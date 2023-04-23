@@ -19,6 +19,10 @@ namespace ComplexNumbers.Algebra
 		{
 			if (a == 0)
 			{
+				if (b == 0)
+				{
+					throw new Exception("Given equation was 0=0. All complex numbers are roots.")
+				}
 				return new ComplexNumber[0];
 			}
 			else
