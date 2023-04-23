@@ -39,6 +39,11 @@
 		{
 		}
 
+		public ComplexNumber(double real, double imaginary)
+		{
+			data = (real, imaginary, ComplexNumberStoreMode.cartesian);
+		}
+
 
 		public ComplexNumber(double d)
 		{
