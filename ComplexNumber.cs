@@ -545,6 +545,18 @@
 			return roots.ToArray();
 		}
 		#endregion
+
+		#region Gaussian integers
+		public bool IsGaussianInteger()
+		{
+			return (Real % 1 == 0 && Imaginary % 1 == 0);
+		}
+
+		public ComplexNumber NearestGaussianInteger()
+		{
+			return ComplexNumber.FromCartesian(Math.Round(Real), Math.Round(Imaginary));
+		}
+		#endregion
 	}
 
 	internal enum ComplexNumberStoreMode
