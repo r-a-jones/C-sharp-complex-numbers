@@ -8,7 +8,7 @@ namespace ComplexNumbers.Geometry.Riemann_Sphere
 {
 	public static class ComplexNumberRiemannSphereGeometry
 	{
-		public static (double, double, double) ToRiemannSphere(ComplexNumber z)
+		public static (double, double, double) ToRiemannSphere(this ComplexNumber z)
 		{
 			double projectDenominator = 1 + z.Real * z.Real + z.Imaginary * z.Imaginary;
 			double sphereX = 2 * z.Real / projectDenominator;
@@ -17,7 +17,7 @@ namespace ComplexNumbers.Geometry.Riemann_Sphere
 
 			return (sphereX, sphereY, sphereZ);
 		}
-		public static (double, double, double) ToRiemannSphere(ComplexNumber z, RiemannSpherePole poleToProjectInfinityTo)
+		public static (double, double, double) ToRiemannSphere(this ComplexNumber z, RiemannSpherePole poleToProjectInfinityTo)
 		{
 			switch (poleToProjectInfinityTo)
 			{
