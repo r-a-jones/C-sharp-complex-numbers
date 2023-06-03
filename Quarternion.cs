@@ -118,6 +118,24 @@ namespace ComplexNumbers
 		{
 			return Multiply(q1, q2);
 		}
+
+		private static Quarternion Multiply(Quarternion q1, int q2)
+		{
+			return q1 * new Quarternion(q2);
+		}
+		public static Quarternion operator *(Quarternion q1, int q2)
+		{
+			return Multiply(q1, q2);
+		}
+
+		private static Quarternion Multiply(int q1, Quarternion q2)
+		{
+			return new Quarternion(q1) * q2;
+		}
+		public static Quarternion operator *(int q1, Quarternion q2)
+		{
+			return Multiply(q1, q2);
+		}
 		#endregion
 
 		#region Conjugate
