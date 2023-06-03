@@ -306,5 +306,30 @@ namespace ComplexNumbers
 			return (z != i);
 		}
 		#endregion
+
+		#region Standard quarternions
+
+		public static Quarternion i
+		{
+			get
+			{
+				return new Quarternion(0, 1, 0, 0);
+			}
+		}
+		public static Quarternion j
+		{
+			get
+			{
+				return new Quarternion(0, 0, 1, 0);
+			}
+		}
+		public static Quarternion k
+		{
+			get
+			{
+				return new Quarternion(0, 0, 0, 1);
+			}
+		}
+		#endregion
 	}
 }
