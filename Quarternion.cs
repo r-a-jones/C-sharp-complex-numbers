@@ -43,7 +43,7 @@ namespace ComplexNumbers
 			this.kPart = 0;
 		}
 
-		public static implicit operator Quarternion(int i) => new Quarternion(i);
+		public static implicit operator Quarternion(Int32 i) => new Quarternion((double)i);
 		public static implicit operator Quarternion(double d) => new Quarternion(d);
 		public static implicit operator Quarternion(ComplexNumber z) => new Quarternion(z);
 
@@ -108,9 +108,9 @@ namespace ComplexNumbers
 		private static Quarternion Multiply(Quarternion q1, Quarternion q2)
 		{
 			double realPart = q1.Real * q2.Real - q1.I * q2.I - q1.J * q2.J - q1.K * q2.K;
-			double iPart = q1.Real * q2.I - q1.I * q2.Real - q1.J * q2.K - q1.K * q2.J;
-			double jPart = q1.Real * q2.J - q1.I * q2.K - q1.J * q2.Real - q1.K * q2.I;
-			double kPart = q1.Real * q2.K - q1.I * q2.J - q1.J * q2.I - q1.K * q2.Real;
+			double iPart = q1.Real * q2.I + q1.I * q2.Real + q1.J * q2.K - q1.K * q2.J;
+			double jPart = q1.Real * q2.J - q1.I * q2.K + q1.J * q2.Real + q1.K * q2.I;
+			double kPart = q1.Real * q2.K + q1.I * q2.J - q1.J * q2.I + q1.K * q2.Real;
 
 			return new Quarternion(realPart, iPart, jPart, kPart);
 		}

@@ -345,6 +345,10 @@
 		/// </summary>
 		public static bool IsInfinity(ComplexNumber z)
 		{
+			if (z is null)
+			{
+				return false;
+			}
 			return z.isInfinity;
 		}
 
@@ -353,6 +357,10 @@
 		/// </summary>
 		public static bool IsFinite(ComplexNumber z)
 		{
+			if (z is null)
+			{
+				return false;
+			}
 			return !(IsInfinity(z));
 		}
 
