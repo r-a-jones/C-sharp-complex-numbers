@@ -21,7 +21,7 @@ namespace ComplexNumbers.Algebra
 			{
 				if (b == 0)
 				{
-					throw new Exception("Given equation was 0=0. All complex numbers are roots.")
+					throw new Exception("Given equation was 0=0. All complex numbers are roots.");
 				}
 				return new ComplexNumber[0];
 			}

@@ -87,7 +87,7 @@
 				}
 				else
 				{
-					return Modulus * Math.Cos(Imaginary);
+					return Modulus * Math.Cos(Argument);
 				}
 			}
 
@@ -107,7 +107,7 @@
 				}
 				else
 				{
-					return Real * Math.Sin(Imaginary);
+					return Real * Math.Sin(Argument);
 				}
 			}
 
